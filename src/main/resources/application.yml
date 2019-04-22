@@ -1,0 +1,25 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /UserManagement
+#freemarker
+#spring.freemarker.template-loader-path=classpath:/templates/
+#spring.freemarker.charset=utf-8
+#spring.freemarker.cache=false
+#spring.freemarker.expose-request-attributes=true
+#spring.freemarker.expose-session-attributes=true
+#spring.freemarker.expose-spring-macro-helpers=true
+#spring.freemarker.suffix=.ftl
+
+security:
+  oauth2:
+    client:
+      client-id: UserManagement
+      client-secret: $2a$10$ZRmPFVgE6o2aoaK6hv49pOt5BZIKBDLywCaFkuAs6zYmRkpKHgyuO
+      user-authorization-uri:  http://localhost:8080/server/oauth/authorize
+      access-token-uri:  http://localhost:8080/server/oauth/token
+    resource:
+      jwt:
+        key-uri:  http://localhost:8080/server/oauth/token_key
+        
+#logback.access.config.path=./src/main/respirces/logback.xml
